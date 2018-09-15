@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Search Hospitals</title>
+</head>
+<body>
+    <%= name %>
+    <form action="/api/hospital/search" method="POST">
+        <fieldset>
+            <legend>Basic Facilities</legend>
+            <input type="checkbox" name="checkbox" value="ENT">ENT </br>
+            <input type="checkbox" name="checkbox" value="Surgery">Surgery</br>
+            <input type="checkbox" name="checkbox" value="Medicine">Medicine </br>
+            <input type="checkbox" name="checkbox" value="SkinVD">Skin & VD </br>
+            <input type="checkbox" name="checkbox" value="gynaecology">Gynaecology
+        </fieldset>
+        <fieldset>
+            <legend>Super Specialists</legend>
+        </fieldset>
+        <fieldset>
+            <legend>Special Facilities</legend>
+        </fieldset>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

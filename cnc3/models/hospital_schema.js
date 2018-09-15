@@ -23,15 +23,66 @@ var hospital_schema = new Schema ({
   doctor : {
     type : Array
   },
-  facilities : {
-    type : Array
+  
+  ENT: {type : Number},
+  Surgery: {
+       type: Number
+     },
+  Medicine: {
+    type: Number
+   },
+  SkinVD:{
+     type: Number
   },
-  superSpec : {
-    type : Array
+  gynaecology: {
+       type: Number
   },
-  optionalFacilities: {
-    type : Array
-  }
+  Orthopedics: {
+     type: Number
+  },
+  Paediatric: {
+     type: Number
+  },
+// normal ends here-------------------------------------
+  Gastroenterology: {
+      type: Number
+    },
+    Neurology: {
+      type: Number
+    },
+    Neurosurgery: {
+      type: Number
+    },
+    PlasticSurgery: {
+      type: Number
+    },
+    Nephrology: {
+      type: Number
+    },
+    Urology: {
+      type: Number
+    },
+    //Special Ends-------------------------------------
+    CasualtyService: {
+      type: Number
+    },
+    ChildDelivery: {
+      type: Number
+    },
+    NICU: {
+      type: Number
+    },
+    ICU: {
+      type: Number
+    },
+    Ambulance24: {
+      type: Number
+    },
+    HaemoglobinA: {
+      type: Number
+    },
+
+
 });
 
 var hospital_schema = mongoose.model('hospital_schema', hospital_schema);

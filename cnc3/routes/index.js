@@ -3,6 +3,7 @@ var router = express.Router();
 var http = require('http');
 var path = require('path');
 var url = require('url');
+var formDataToObject = require("form-data-to-object");
 
 var users = require('../models/user_schema');
 var hospitals = require('../models/hospital_schema')
@@ -61,7 +62,15 @@ router.post('/signup', function (req, res) {
 //SEARCH HOSPITAL---------------------------------------------------------------------------------------------------------
 router.get('/hospital/search', function (req, res, next) {
   
+  res.render('demosearch', {name : "Adarsh"})
+
+
 });
+
+router.post('/hospital/search', function (req, res, next) {
+  console.log(req.body);
+  res.render('layout', {});
+})
 
 router.post('/hospital/register', function (req, res, next) {
   var newHosp = new hospitals({
@@ -71,9 +80,25 @@ router.post('/hospital/register', function (req, res, next) {
     address: req.body.address,
     pincode: req.body.pincode,
     doctor: req.body.doctor,
-    facilities: req.body.facilities,
-    superSpec: req.body.superSpeciality,
-    optionalFacilities: req.body.optionalFacilities
+    ENT : req.body.ent, 
+    Surgery : req.body.surgery,
+    Medicine: req.body.medicine,
+    SkinVD: req.body.skinvd,
+    gynaecology: req.body.gynaecology,
+    Orthopedics: req.body.Orthopedics,
+    Paediatric: req.body.Paediatric,
+    Gastroenterology: req.body.Gastroenterology,
+    Neurology: req.body.Neurology,
+    Neurosurgery: req.body.Neurosurgery,
+    PlasticSurgery: req.body.PlasticSurgery,
+    Nephrology:req.body.Nephrology,
+    Urology:req.body.Urology,
+    CasualtyService:req.body.CasualtyService,
+    ChildDelivery:req.body.ChildDelivery,
+    NICU:req.body.NICU,
+    ICU:req.body.ICU,
+    Ambulance24:req.body.Ambulance24,
+    HaemoglobinA:req.body.HaemoglobinA,
   });
 
   newHosp.save()

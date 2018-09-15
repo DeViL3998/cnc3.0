@@ -12,6 +12,7 @@
     "ejs": "^2.6.1",
     "express": "~4.16.0",
     "express-ejs-layouts": "^2.5.0",
+    "form-data-to-object": "^0.2.0",
     "http-errors": "~1.6.2",
     "jade": "~1.11.0",
     "mongoose": "^5.2.14",
