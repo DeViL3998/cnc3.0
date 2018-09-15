@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login V3</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->  
+  <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="css/util.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+
+</head>
+<body>
+<div class="tab">
+  <button class="tablinks" id="hide" onclick="openCity(event, 'Patient')">Patient</button>
+
+  <button class="tablinks" id="hide" onclick="openCity(event, 'Hospital')">Hospital</button>
+</div>
+
+
+<div id="Patient" class="tabcontent">
+  <div class="limiter">
+    <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+      <div class="wrap-login100">
+        <form class="login100-form validate-form">
+          <span class="login100-form-logo">
+            <i class="zmdi zmdi-landscape"></i>
+          </span>
+          <span class="login100-form-title p-b-34 p-t-27">
+            Register
+          </span>
+          <div class="wrap-input100 validate-input" data-validate = "Enter Name">
+            <input class="input100" type="text" name="name" placeholder="Name">
+            <span class="focus-input100" data-placeholder="&#xf207;"></span>
+          </div>     
+          <div class="wrap-input100 validate-input" data-validate = "Enter Email">
+            <input class="input100" type="email" name="email" placeholder="Email">
+            <span class="focus-input100" data-placeholder="&#xf159;"></span>
+          </div>
+          <div class="wrap-input100 validate-input" data-validate="Enter Mobile Number">
+            <input class="input100" type="number" name="mobile" placeholder="Mobile Number">
+            <span class="focus-input100" data-placeholder="&#xf2b6;"></span>
+          </div>
+          <div class="wrap-input100 validate-input" data-validate="Enter Age">
+            <input class="input100" type="number" name="age" placeholder="Age">
+            <span class="focus-input100" data-placeholder="&#xf32e;"></span>
+          </div>
+          <div class="wrap-input100 validate-input" data-validate = "Enter Address">
+            <input class="input100" type="text" name="address" placeholder="Address">
+            <span class="focus-input100" data-placeholder="&#xf299;"></span>
+          </div>
+          <div class="wrap-input100 validate-input" data-validate = "Enter Pincode">
+            <input class="input100" type="number" name="pincode" placeholder="Pincode">
+            <span class="focus-input100" data-placeholder="&#xf15a;"></span>
+          </div>
+          <div class="wrap-input100 validate-input" data-validate="Enter password">
+            <input class="input100" type="password" name="pass" placeholder="Password">
+            <span class="focus-input100" data-placeholder="&#xf191;"></span>
+          </div>
+          <div class="wrap-input100 validate-input" data-validate="Confirm password">
+            <input class="input100" type="password" name="conf_pass" placeholder="Confirm Password">
+            <span class="focus-input100" data-placeholder="&#xf191;"></span>
+          </div>
+          <div class="container-login100-form-btn">
+            <button class="login100-form-btn">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="Hospital" class="tabcontent">
+   <div class="limiter">
+    <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+      <div class="wrap-login100">
+        <form class="login100-form validate-form">
+          <span class="login100-form-logo">
+            <i class="zmdi zmdi-landscape"></i>
+          </span>
+          <span class="login100-form-title p-b-34 p-t-27">
+            Register
+          </span>
+          <div id='hosp_tab'>
+            <div class="wrap-input100 validate-input" data-validate = "Enter Hospital Name">
+              <input class="input100" type="text" name="hosp_name" placeholder="Hospital Name">
+              <span class="focus-input100" data-placeholder="&#xf207;"></span>
+            </div>      
+
+            <div class="wrap-input100 validate-input" data-validate = "Enter Email Name">
+              <input class="input100" type="email" name="hosp_email" placeholder="Hospital Email">
+              <span class="focus-input100" data-placeholder="&#xf159;"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate="Enter Hospital Number">
+              <input class="input100" type="number" name="hosp_contact" placeholder="Hospital Contact Number">
+              <span class="focus-input100" data-placeholder="&#xf2b6;"></span>
+            </div>
+          </div>
+
+          <div id='hosp_tab'>
+            <div class="wrap-input100 validate-input" data-validate = "Enter Address">
+              <input class="input100" type="text" name="address" placeholder="Address">
+              <span class="focus-input100" data-placeholder="&#xf299;"></span>
+            </div>  
+
+            <div class="wrap-input100 validate-input" data-validate = "Enter Pincode">
+              <input class="input100" type="number" name="pincode" placeholder="Pincode">
+              <span class="focus-input100" data-placeholder="&#xf15a;"></span>
+            </div> 
+          </div>
+
+          <div id='hosp_tab'>
+            <div class="wrap-input100 validate-input" data-validate="Enter password">
+              <input class="input100" type="password" name="pass" placeholder="Password">
+              <span class="focus-input100" data-placeholder="&#xf191;"></span>
+            </div>
+            <div class="wrap-input100 validate-input" data-validate="Confirm password">
+              <input class="input100" type="password" name="hosp_conf_pass" placeholder="Confirm Password">
+              <span class="focus-input100" data-placeholder="&#xf191;"></span>
+            </div>
+          </div>
+          <div class="container-login100-form-btn">
+            <button class="login100-form-btn">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/bootstrap/js/popper.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/daterangepicker/moment.min.js"></script>
+  <script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+  <script src="js/main.js"></script>
+  <script>
+$(document).ready(function(){
+    $("#hide").click(function(){
+        $(this).hide();
+    });
+</script>
+     
+</body>
+</html> 
