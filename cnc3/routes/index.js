@@ -83,21 +83,23 @@ router.post('/api/hospital/search', function (req, res, next) {
     .then((data) => {
       hosp = data;
       console.log("hosp data"+hosp);
+      for (i = 0; i < hosp.length; i++) {
+        sum = 0
+        for (let key of req.body.checkbox) {
+          sum += hosp[i][key];
+          console.log(sum);
+        }
+        hosp[i]["sum"] = sum;
+      }
+      console.log(hosp);
+      res.render('demosearch', {
+        hosp
+      });
     })
     .catch(err => {
       res.send(err)
     })
-  console.log(hosp);
-  for(i= 0; i<hosp.length; i++){
-    sum = 0
-    for(let key of req.body.checkbox){
-      sum += hosp[i][key];
-      console.log(sum);
-    }
-    hosp[i]["sum"] = sum;
-  }
-  console.log(hosp);
-  res.render('demosearch', {hosp} );
+  
 }) 
 
 
