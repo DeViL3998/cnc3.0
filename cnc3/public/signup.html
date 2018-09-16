@@ -26,23 +26,28 @@
   <link rel="stylesheet" type="text/css" href="css/util.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
-
+<link rel="icon" href="images/icons/hosp.ico">
 </head>
 <body>
-<div class="tab">
-  <button class="tablinks" id="hide" onclick="openCity(event, 'Patient')">Patient</button>
-
-  <button class="tablinks" id="hide" onclick="openCity(event, 'Hospital')">Hospital</button>
+<div class="ot">
+<div class="md">
+<div class="inni">
+<div class="tab" style="align-content: auto; vertical-align: center;">
+  <button class="tablinks" id="hides" onclick="openCity(event, 'Patient')">Patient</button>
+  <button class="tablinks" id="hides1" onclick="openCity(event, 'Hospital')">Hospital</button>
+</div>
+</div>
+</div>
 </div>
 
 
 <div id="Patient" class="tabcontent">
   <div class="limiter">
-    <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+    <div class="container-login100" style="background-image: url('images/hospital.jpeg');">
       <div class="wrap-login100">
         <form class="login100-form validate-form">
           <span class="login100-form-logo">
-            <i class="zmdi zmdi-landscape"></i>
+            <i class="zmdi zmdi-accounts"></i>
           </span>
           <span class="login100-form-title p-b-34 p-t-27">
             Register
@@ -93,11 +98,11 @@
 
 <div id="Hospital" class="tabcontent">
    <div class="limiter">
-    <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+    <div class="container-login100" style="background-image: url('images/hospital.jpg');">
       <div class="wrap-login100">
         <form class="login100-form validate-form">
           <span class="login100-form-logo">
-            <i class="zmdi zmdi-landscape"></i>
+            <i class="zmdi zmdi-plus"></i>
           </span>
           <span class="login100-form-title p-b-34 p-t-27">
             Register
@@ -184,11 +189,10 @@ function openCity(evt, cityName) {
   <script src="js/main.js"></script>
   <script>
 $(document).ready(function(){
-    $("#hide").click(function(){
+    $(".tab").click(function(){
         $(this).hide();
     });
   });
-  
 </script>
      
 </body>
