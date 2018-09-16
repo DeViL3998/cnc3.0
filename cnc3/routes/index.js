@@ -62,16 +62,39 @@ router.post('/signup', function (req, res) {
 //SEARCH HOSPITAL---------------------------------------------------------------------------------------------------------
 router.get('/hospital/search', function (req, res, next) {
   
-  res.render('demosearch', {name : "Adarsh"})
+  //res.render('demosearch', {name : "Adarsh"})
+
+  
+  // hospitals.findBy({
+
+  // });
 
 
 });
 
 router.post('/hospital/search', function (req, res, next) {
   console.log(req.body);
+  const query = req.body.checkbox.reduce((a, x) => ({ ...a,
+    [x]: {
+      '$gte': 0
+    }
+  }), {});
+
+
+  hospitals.find(query)
+    .then((data) => {
+      console.log(data);
+    })
+    .catch(err =>{
+      res.send(err)
+    })
+
   res.render('layout', {});
 })
 
+
+
+//Register Hospitals -----------------------------------------------------
 router.post('/hospital/register', function (req, res, next) {
   var newHosp = new hospitals({
     h_name:req.body.name,
