@@ -23,17 +23,18 @@
 <!--===============================================================================================-->  
   <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="css/util.css">
-  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="./css/util.css">
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
 <!--===============================================================================================-->
 <link rel="icon" href="images/icons/hosp.ico">
 </head>
 <body>
+
 <div class="ot">
-<div class="md">
-<div class="inni">
-<div class="tab" style="align-content: auto; vertical-align: center;">
-  <button class="tablinks" id="hides" onclick="openCity(event, 'Patient')">Patient</button>
+<div class="md" style="background-color: #000;">
+<div class="inni" >
+<div class="tab" style="align-content: auto; vertical-align: center;  ">
+<button class="tablinks" id="hides" onclick="openCity(event, 'Patient')" >Patient</button>
   <button class="tablinks" id="hides1" onclick="openCity(event, 'Hospital')">Hospital</button>
 </div>
 </div>
@@ -41,9 +42,10 @@
 </div>
 
 
+
 <div id="Patient" class="tabcontent">
   <div class="limiter">
-    <div class="container-login100" style="background-image: url('images/hospital.jpeg');">
+<div class="container-login100" style="background-image: url('images/hospital.jpeg');">
       <div class="wrap-login100">
         <form class="login100-form validate-form" method="POST" action="/api/signup">
           <span class="login100-form-logo">
@@ -186,7 +188,7 @@ function openCity(evt, cityName) {
 <!--===============================================================================================-->
   <script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-  <script src="js/main.js"></script>
+  <script src="./js/main.js"></script>
   <script>
 $(document).ready(function(){
     $(".tab").click(function(){

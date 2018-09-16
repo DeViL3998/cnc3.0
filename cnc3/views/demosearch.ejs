@@ -1,28 +1,196 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Search Hospitals</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Find-A-Cure: Hospital Search</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="../api/essence/img/core-img/hosp.ico">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="../api/essence/css/core-style.css">
+    <link rel="stylesheet" href="../api/essence/style.css">
+
 </head>
+
 <body>
-    <%= name %>
-    <form action="/api/hospital/search" method="POST">
-        <fieldset>
-            <legend>Basic Facilities</legend>
-            <input type="checkbox" name="checkbox" value="ENT">ENT </br>
-            <input type="checkbox" name="checkbox" value="Surgery">Surgery</br>
-            <input type="checkbox" name="checkbox" value="Medicine">Medicine </br>
-            <input type="checkbox" name="checkbox" value="SkinVD">Skin & VD </br>
-            <input type="checkbox" name="checkbox" value="gynaecology">Gynaecology
-        </fieldset>
-        <fieldset>
-            <legend>Super Specialists</legend>
-        </fieldset>
-        <fieldset>
-            <legend>Special Facilities</legend>
-        </fieldset>
-        <button type="submit">Submit</button>
-    </form>
+    <!-- ##### Header Area Start ##### -->
+    <header class="header_area">
+        <div class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
+            <!-- Classy Menu -->
+            <nav class="classy-navbar" id="essenceNav">
+                <!-- Logo -->
+                <a class="nav-brand" href="/#"><img src="../api/essence/img/core-img/logo3.PNG" ></a>
+                <!-- Navbar Toggler -->
+                <div class="classy-navbar-toggler">
+                    <span class="navbarToggler"><span></span><span></span><span></span></span>
+                </div>
+                <!-- Menu -->
+                <div class="classy-menu">
+                    <!-- close btn -->
+                    <div class="classycloseIcon">
+                        <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Header Meta Data -->
+            <div class="header-meta d-flex clearfix justify-content-end">
+                <!-- Search Area -->
+                <div class="search-area">
+                    <form action="#" method="post">
+                        <input type="search" name="search" id="headerSearch" placeholder="Type for search">
+                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="breadcumb_area bg-img" style="background-image: url(../api/essence/img/bg-img/breadcumb.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="page-title text-center">
+                        <h2>hospitals</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Breadcumb Area End ##### -->
+
+    <!-- ##### Shop Grid Area Start ##### -->
+    <section class="shop_grid_area section-padding-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-4 col-lg-3">
+                    <div class="shop_sidebar_area">
+
+                        <!-- ##### Single Widget ##### -->
+                        <div class="widget catagory mb-50">
+                            <!-- Widget Title -->
+                            <h6 class="widget-title mb-30"></h6>
+
+                            <!--  Catagories  -->
+                            <div class="catagories-menu">
+                                <form action="/api/hospital/search" method="POST" id="form1">
+                                    <fieldset>
+                                        <legend>Facilities</legend>
+                                        <input type="checkbox" name="checkbox" value="ENT">ENT</br>
+                                        <input type="checkbox" name="checkbox" value="Surgery">Surgery</br>
+                                        <input type="checkbox" name="checkbox" value="Medicine">Medicine</br>
+                                        <input type="checkbox" name="checkbox" value="SkinVD">Skin & VD</br>
+                                        <input type="checkbox" name="checkbox" value="gynaecology">Gynaecology</br>
+                                        <input type="checkbox" name="checkbox" value="Orthopedics">Orthopedics</br>
+                                        <input type="checkbox" name="checkbox" value="Paediatric">Paediatric</br>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>Super Specialities</legend>
+                                        <input type="checkbox" name="checkbox" value="Gastroentrology">Gastroentrology</br>
+                                        <input type="checkbox" name="checkbox" value="Neurology">Neurology</br>
+                                        <input type="checkbox" name="checkbox" value="Neurosurgery">Neurosurgery</br>
+                                        <input type="checkbox" name="checkbox" value="PlasticSurgery">Plastic Surgery</br>
+                                        <input type="checkbox" name="checkbox" value="Nephrology">Nephrology</br>
+                                        <input type="checkbox" name="checkbox" value="Urology">Urology</br>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>Additional Services</legend>
+                                        <input type="checkbox" name="checkbox" value="CasualtyService">Casualty Service</br>
+                                        <input type="checkbox" name="checkbox" value="ChildDelivery">Child Delivery</br>
+                                        <input type="checkbox" name="checkbox" value="NICU">NICU</br>
+                                        <input type="checkbox" name="checkbox" value="ICU">ICU</br>
+                                        <input type="checkbox" name="checkbox" value="Ambulance24">Ambulance 24*7</br>
+                                        <input type="checkbox" name="checkbox" value="HaemoglobinA">Haemoglobin A</br>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>Medical Tests Available</legend>
+                                        <input type="checkbox" name="checkbox" value="Urine">Urine Test</br>
+                                        <input type="checkbox" name="checkbox" value="Sugar">Sugar Test</br>
+                                        <input type="checkbox" name="checkbox" value="Lipid">Lipid Profile Test</br>
+                                        <input type="checkbox" name="checkbox" value="ICTMalaria">ICT Malaria Test</br>
+                                        <input type="checkbox" name="checkbox" value="Lymphocyte">T Lymphocyte test</br>
+                                    </fieldset>
+                                    </br>
+                                    <button class="btn btn-danger" type="Submit" form="form1" value="Submit">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-8 col-lg-9">
+                    <div class="shop_grid_product_area">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="product-topbar d-flex align-items-center justify-content-between">
+                                    <!-- Total Products -->
+                                    <!-- Sorting -->
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <!-- Single Product -->
+                            <%for(let hospital of hosp[0]) {%>
+                            
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="single-product-wrapper">
+                                    <!-- Product Image -->
+                                    <div class="product-img">
+                                        <img src="../api/essence/img/product-img/product-1.jpg" alt="">
+                                        <!-- Hover Thumb -->
+                                        <img class="hover-img" src="../api/essence/img/product-img/product-1.jpg" alt="">
+                                    </div>
+
+                                    <!-- Product Description -->
+                                    <div class="product-description">
+                                        <span><%=hospital.address %></span>
+                                        <a href="../api/essence/single-product-details.html">
+                                            <h6><%= hospital.h_name %></h6>
+                                        </a>
+                                        <p class="product-price"><%=hospital.sum %> </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <%}%>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Shop Grid Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer_area clearfix">
+        <div class="container">
+        </div>
+    </footer>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="../api/essence/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="../api/essence/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="../api/essence/js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="../api/essence/js/plugins.js"></script>
+    <!-- Classy Nav js -->
+    <script src="../api/essence/js/classy-nav.min.js"></script>
+    <!-- Active js -->
+    <script src="../api/essence/js/active.js"></script>
+
 </body>
+
 </html>
