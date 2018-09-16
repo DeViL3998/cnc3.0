@@ -62,7 +62,7 @@ router.post('/signup', function (req, res) {
 //SEARCH HOSPITAL---------------------------------------------------------------------------------------------------------
 router.get('/hospital/search', function (req, res, next) {
   
-  //res.render('demosearch', {name : "Adarsh"})
+  res.render('demosearch', {name : "Adarsh"})
 
   
   // hospitals.findBy({
@@ -80,6 +80,7 @@ router.post('/hospital/search', function (req, res, next) {
     }
   }), {});
 
+  console.log(query);
 
   hospitals.find(query)
     .then((data) => {
@@ -95,18 +96,23 @@ router.post('/hospital/search', function (req, res, next) {
 
 
 //Register Hospitals -----------------------------------------------------
+router.get('/hospital/register', function (req, res, next) {
+  res.sendFile(path.join(__dirname,'../public/hosp_form.html'));
+});
+
 router.post('/hospital/register', function (req, res, next) {
+  console.log(req.body)
   var newHosp = new hospitals({
-    h_name:req.body.name,
+    h_name: req.body.h_name,
     number: req.body.number,
     email: req.body.email,
+    password : req.body.password,
     address: req.body.address,
     pincode: req.body.pincode,
-    doctor: req.body.doctor,
-    ENT : req.body.ent, 
-    Surgery : req.body.surgery,
-    Medicine: req.body.medicine,
-    SkinVD: req.body.skinvd,
+    ENT : req.body.ENT, 
+    Surgery: req.body.Surgery,
+    Medicine: req.body.Medicine,
+    SkinVD: req.body.SkinVD,
     gynaecology: req.body.gynaecology,
     Orthopedics: req.body.Orthopedics,
     Paediatric: req.body.Paediatric,
@@ -114,19 +120,24 @@ router.post('/hospital/register', function (req, res, next) {
     Neurology: req.body.Neurology,
     Neurosurgery: req.body.Neurosurgery,
     PlasticSurgery: req.body.PlasticSurgery,
-    Nephrology:req.body.Nephrology,
-    Urology:req.body.Urology,
-    CasualtyService:req.body.CasualtyService,
-    ChildDelivery:req.body.ChildDelivery,
-    NICU:req.body.NICU,
-    ICU:req.body.ICU,
-    Ambulance24:req.body.Ambulance24,
-    HaemoglobinA:req.body.HaemoglobinA,
+    Nephrology: req.body.Nephrology,
+    Urology: req.body.Urology,
+    CasualtyService: req.body.CasualtyService,
+    ChildDelivery: req.body.ChildDelivery,
+    NICU: req.body.NICU,
+    ICU: req.body.ICU,
+    Ambulance24: req.body.Ambulance24,
+    HaemoglobinA: req.body.HaemoglobinA,
+    Urine : req.body.urine,
+    Sugar : req.body.sugar,
+    Lipid : req.body.lipid,
+    ICTMalaria : req.body.malaria,
+    Lymphocyte : req.body.lymph
   });
 
   newHosp.save()
     .then((RES) => {
-      console.log("hosp saved");
+      console.log(RES);
       res.sendFile(path.join(__dirname,'../public/weWillVerify.html'))
     })
     .catch(err =>{

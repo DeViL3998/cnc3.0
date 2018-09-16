@@ -20,11 +20,12 @@ var hospital_schema = new Schema ({
   pincode : {
     type : Number
   },
-  doctor : {
-    type : Array
+  password : {
+    type: String
+  },  
+  ENT: {
+    type : Number
   },
-  
-  ENT: {type : Number},
   Surgery: {
        type: Number
      },
@@ -78,7 +79,23 @@ var hospital_schema = new Schema ({
     Ambulance24: {
       type: Number
     },
+    //types of test begins here
     HaemoglobinA: {
+      type: Number
+    },
+    Urine: {
+      type: Number
+    },
+    Sugar: {
+      type: Number
+    },
+    Lipid: {
+      type: Number
+    },
+    ICTMalaria: {
+      type: Number
+    },
+    Lymphocyte: {
       type: Number
     },
 

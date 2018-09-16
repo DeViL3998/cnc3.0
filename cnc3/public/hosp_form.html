@@ -1,57 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>HELLO</title>
 </head>
 <body>
-<form>
-          <span class="login100-form-logo">
-            <i class="zmdi zmdi-landscape"></i>
-          </span>
-          <span class="login100-form-title p-b-34 p-t-27">
+<form action="/api/hospital/register" method="POST">
+          
             Register
-          </span>
-          <div id='hosp_tab'>
-            <div class="wrap-input100 validate-input" data-validate = "Enter Hospital Name">
-              <input class="input100" type="text" name="hosp_name" placeholder="Hospital Name">
-              <span class="focus-input100" data-placeholder="&#xf207;"></span>
-            </div>      
+          
+          
+            
+              <input  name="h_name" placeholder="Hospital Name">
 
-            <div class="wrap-input100 validate-input" data-validate = "Enter Email Name">
-              <input class="input100" type="email" name="hosp_email" placeholder="Hospital Email">
-              <span class="focus-input100" data-placeholder="&#xf159;"></span>
-            </div>
+              <input type="email" name="email" placeholder="Hospital Email">
 
-            <div class="wrap-input100 validate-input" data-validate="Enter Hospital Number">
-              <input class="input100" type="number" name="hosp_contact" placeholder="Hospital Contact Number">
-              <span class="focus-input100" data-placeholder="&#xf2b6;"></span>
-            </div>
-          </div>
+              <input type="number" name="number" placeholder="Hospital Contact Number">
 
-          <div id='hosp_tab'>
-            <div class="wrap-input100 validate-input" data-validate = "Enter Address">
-              <input class="input100" type="text" name="address" placeholder="Address">
-              <span class="focus-input100" data-placeholder="&#xf299;"></span>
-            </div>  
+              <input name="address" placeholder="Address">
+  
 
-            <div class="wrap-input100 validate-input" data-validate = "Enter Pincode">
-              <input class="input100" type="number" name="pincode" placeholder="Pincode">
-              <span class="focus-input100" data-placeholder="&#xf15a;"></span>
-            </div> 
-          </div>
 
-          <div id='hosp_tab'>
-            <div class="wrap-input100 validate-input" data-validate="Enter password">
-              <input class="input100" type="password" name="pass" placeholder="Password">
-              <span class="focus-input100" data-placeholder="&#xf191;"></span>
-            </div>
-            <div class="wrap-input100 validate-input" data-validate="Confirm password">
-              <input class="input100" type="password" name="hosp_conf_pass" placeholder="Confirm Password">
-              <span class="focus-input100" data-placeholder="&#xf191;"></span>
-            </div>
-          </div>
-          <div class="container-login100-form-btn">
-          </div>
+              <input type="number" name="pincode" placeholder="Pincode">
+
+              <input type="password" name="password" placeholder="Password">
+
+              <input type="password"  placeholder="Confirm Password">
         
                                        
                                     <fieldset>      
@@ -81,11 +54,18 @@
                                                 <input type="number" name="ICU">ICU</br>
                                                 <input type="number" name="Ambulance24">Ambulance 24*7</br>
                                                 <input type="number" name="HaemoglobinA">Haemoglobin A</br>
+<input type="number" name="urine">urine test</br>
+<input type="number" name="sugar">sugar test</br>
+<input type="number" name="lipid"> lipid test</br>
+<input type="number" name="malaria">malaria test</br>
+<input type="number" name="lymph">lymphocyte test</br>
+
                                     </fieldset>
+
                                     <button class="login100-form-btn" type="submit">
               Submit
             </button>
                                 </form>
 
 </body>
-</html>>
+</html>
