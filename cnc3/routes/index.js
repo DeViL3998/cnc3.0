@@ -33,7 +33,7 @@ router.post('/login', function(req, res, next) {
 
 //SIGNUP------------------------------------------------------------------------------------------------------------------
 router.get('/signup', function (req, res) {
-  
+  res.sendFile(path.join(__dirname,'../public/signup.html'))
 });
 
 router.post('/signup', function (req, res) {
@@ -86,7 +86,7 @@ router.post('/hospital/search', function (req, res, next) {
     .then((data) => {
       console.log(data);
     })
-    .catch(err =>{
+    .catch(err => {
       res.send(err)
     })
 
@@ -146,6 +146,16 @@ router.post('/hospital/register', function (req, res, next) {
 });
 
 //SEARCH DOCTOR------------------------------------------------------------------------------------------------------------
-router.get('/doctor/search')
+router.get('/doctor/search', function (req, res, next) {
+  var arr = {}
+  // doctors.findAll()
+  //   .then((data) => {
+  //     arr = data;
+  //   })
+  //   .catch(err=>{
+  //     res.send(err)
+  //   })
+  // res.render('docSearch',arr)
+})
 
 module.exports = router;
