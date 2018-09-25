@@ -118,16 +118,17 @@
                                         <input type="checkbox" name="checkbox" value="Lymphocyte">T Lymphocyte test</br>
                                     </fieldset>
                                     </br>
-                                    
+
                                     <button class="btn btn-danger" type="Submit" form="form1" value="Submit">Submit</button>
                                 </form>
-                            </br>
+                                </br>
                                 <form style="opacity:0.3">
                                     <fieldset>
                                         <legend>Insurances Covered(Premium)*</legend>
                                         <input type="radio" name="insuarance" value="LIC">LIC Jeevan Beema</br>
                                         <input type="radio" name="insuarance" value="ICICI">ICICI Health Insurance</br>
-                                        <input type="radio" name="insuarance" value="Allianz">Bajaj Allianz Health Insurance</br>
+                                        <input type="radio" name="insuarance" value="Allianz">Bajaj Allianz Health
+                                        Insurance</br>
                                     </fieldset>
                                 </form>
                                 </br>
@@ -148,23 +149,33 @@
                             </div>
                         </div>
 
-                        <div class="row">
 
-                            <!-- Single Product -->
-                            <%// for(let hospital of hosp[0]) {%>
 
-                            <div class="col-12 col-sm-6 col-lg-4">
-                                    <div class="product-description">
-                                        <h4>
-                                            No Matches Found
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<div class="col-12 col-sm-6 col-lg-4">
+    <div class="single-product-wrapper">
+        <!-- Product Image -->
+        <div class="product-img">
+            <img src="../api/essence/img/product-img/product-1.jpg" alt="">
+            <!-- Hover Thumb -->
+            <img class="hover-img" src="../api/essence/img/product-img/product-1.jpg" alt="">
+        </div>
+
+        <!-- Product Description -->
+        
+                <h6><a href="#" >
+                    <%= hospital.h_name %>
+                    </a>
+                </h6>
+            
+        </div>
+    </div>
+</div>
+
+                        
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <!-- ##### Shop Grid Area End ##### -->

@@ -17,6 +17,9 @@ var doctor_schema = new Schema ({
         address: {
             type: String
         },
+        experience : {
+            type :Number
+        },
         pincode: {
             type: Number
         },

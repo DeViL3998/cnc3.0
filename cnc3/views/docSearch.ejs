@@ -120,7 +120,7 @@
                         </div>
 
                         <div class="row">
-
+                            <%for(let doctors of doc) {%>
                             <!-- Single Product -->
                             <div class="col-12 col-sm-6 col-lg-4">
                                 <div class="single-product-wrapper">
@@ -131,8 +131,9 @@
 
                                     <!-- Product Description -->
                                     <div class="product-description">
-                                        <span>topshop</span>                                        
-                                            <h6></h6>
+                                            <span><%=doctors.experience %></span>
+                                    <h6><%= doctors.dname %></h6>
+
                                     </div>
                                 </div>
                             </div>

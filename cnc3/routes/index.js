@@ -82,25 +82,47 @@ router.post('/api/hospital/search', function (req, res, next) {
   hospitals.find(query)
     .then((data) => {
       hosp = data;
-      console.log("hosp data"+hosp);
       for (i = 0; i < hosp.length; i++) {
         sum = 0
+        count = 0
         for (let key of req.body.checkbox) {
+          if (hosp[i][key]===1) {
+            count+=1;
+          }else{
           sum += hosp[i][key];
-          console.log(sum);
+          console.log(count);
+          }
         }
         hosp[i]["sum"] = sum;
+        hosp[i]['count'] = count;
       }
-      console.log(hosp);
+      console.log({hosp});
       res.render('demosearch', {
+        hosp
+      }); 
+    })
+    .catch(err => {
+      res.send(err)
+    })
+  
+}) ;
+
+//Name search=====================================================================
+router.post('/api/hospital/name', function (req, res, next) {
+  let hosp;
+  hospitals.find({
+      "h_name": req.body.name
+    })
+    .then((data) => {
+      hosp = data;
+      res.render('demosearch3', {
         hosp
       });
     })
     .catch(err => {
       res.send(err)
     })
-  
-}) 
+});
 
 
 
@@ -161,7 +183,7 @@ router.get('/api/doctor/search', function (req, res, next) {
 
 //post======================================================================
 router.post('/api/doctor/search', function (req, res, next) {
-  doc = {};
+  let doc;
   const query = req.body.checkbox.reduce((a, x) => ({ ...a,
     [x]: {
       '$gte': 0
@@ -172,22 +194,27 @@ router.post('/api/doctor/search', function (req, res, next) {
 
   doctors.find(query)
     .then((data) => {
-      doc = data
+      doc = data;
+      console.log("hosp data" + doc);
+      for (i = 0; i < doc.length; i++) {
+        sum = 0
+        for (let key of req.body.checkbox) {
+          sum += doc[i][key];
+          console.log(sum);
+        }
+        doc[i]["sum"] = sum;
+      }
+      console.log(doc);
+      res.render('docSearch', {
+        doc
+      });
     })
     .catch(err => {
       res.send(err)
     })
-  sum = 0;
-  for(i= 0; i<doc.length; i++){
-    sum = 0
-    for(j=0; j<req.body.checkbox.length; j++){
+});
 
-    }
 
-  }
-
-  res.render('demosearch', doc);
-})
 
 
 
@@ -206,6 +233,7 @@ router.post('/api/hospital/register', function (req, res, next) {
     address: req.body.address,
     pincode: req.body.pincode,
     ENT: req.body.ENT,
+    experience : req.body.experience,
     Surgery: req.body.Surgery,
     Medicine: req.body.Medicine,
     SkinVD: req.body.SkinVD,
